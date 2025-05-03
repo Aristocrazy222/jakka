@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Страница не найдена</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-[Manrope] flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-[#c62828] shadow-md">
+    <div class="relative max-w-screen-xl w-full mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="border-2 border-white rounded-lg px-4 py-2">
+        <span class="text-white text-xl sm:text-2xl font-extrabold tracking-wide">TastyDay</span>
+      </div>
+
+      <!-- Burger Button (мобильное меню) -->
+      <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Навигация -->
+      <nav id="menu"
+           class="hidden absolute top-full left-0 w-full bg-[#c62828] flex flex-col items-center space-y-4 py-4 md:static md:flex-row md:space-x-4 md:bg-transparent md:py-0">
+        <a href="index.html" class="text-white text-base sm:text-lg hover:underline">ГЛАВНАЯ</a>
+        <a href="recipes.html" class="text-white text-base sm:text-lg hover:underline">РЕЦЕПТЫ</a>
+        <a href="gallery.html" class="text-white text-base sm:text-lg hover:underline">ГАЛЕРЕЯ</a>
+        <a href="about.html" class="text-white text-base sm:text-lg hover:underline">О НАС</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow flex items-center justify-center py-16 px-4 sm:py-20 sm:px-6">
+    <div class="text-center max-w-md sm:max-w-lg">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-red-600 mb-4">404</h1>
+      <p class="text-xl sm:text-2xl font-semibold mb-4">Упс! Страница не найдена.</p>
+      <p class="text-gray-600 mb-6">Возможно, вы ввели неправильный адрес или страница была удалена.</p>
+      <a href="index.html"
+         class="inline-block bg-red-600 text-white font-medium rounded-full px-5 py-2.5 sm:px-6 sm:py-3 hover:bg-red-700 transition">
+        Вернуться на главную
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-center text-sm text-gray-600 py-4 px-4 sm:px-6 mt-auto">
+    &copy; 2025 TastyDay. Все права защищены.
+  </footer>
+
+  <!-- Toggle Script -->
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

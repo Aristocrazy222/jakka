@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TastyDay — Галерея</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { font-family: 'Manrope', sans-serif; }
+    .transition-max-height {
+      transition: max-height 0.3s ease-in-out;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-[#c62828] shadow-md">
+    <div class="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between text-white">
+      <div class="border-2 border-white rounded-lg px-4 py-1">
+        <span class="text-xl sm:text-2xl font-extrabold tracking-wide">TastyDay</span>
+      </div>
+
+      <nav class="hidden md:flex space-x-6 font-bold text-sm sm:text-base">
+        <a href="index.html" class="hover:underline">ГЛАВНАЯ</a>
+        <a href="recipes.html" class="hover:underline">РЕЦЕПТЫ</a>
+        <a href="gallery.html" class="underline md:no-underline hover:underline">ГАЛЕРЕЯ</a>
+        <a href="about.html" class="hover:underline">О НАС</a>
+      </nav>
+
+      <button id="menu-btn" class="block md:hidden text-white focus:outline-none">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <nav id="menu" class="transition-max-height max-h-0 md:hidden bg-[#c62828] px-4 text-white font-bold">
+      <a href="index.html" class="block py-2 border-t border-white/20">ГЛАВНАЯ</a>
+      <a href="recipes.html" class="block py-2 border-t border-white/20">РЕЦЕПТЫ</a>
+      <a href="gallery.html" class="block py-2 border-t border-white/20">ГАЛЕРЕЯ</a>
+      <a href="about.html" class="block py-2 border-t border-white/20 border-b">О НАС</a>
+    </nav>
+  </header>
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('max-h-0');
+      menu.classList.toggle('max-h-96');
+    });
+  </script>
+
+  <!-- Main -->
+  <main class="flex-1 max-w-screen-xl w-full mx-auto px-4 py-8 space-y-10 mt-6">
+
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center">Галерея блюд</h1>
+
+    <!-- Описание -->
+    <div class="border-2 border-gray-300 rounded-xl p-5 bg-gray-50">
+      <h2 class="text-lg sm:text-xl font-semibold mb-2">Немного о нашей кухне</h2>
+      <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+        В TastyDay мы тщательно подбираем ингредиенты и вдохновляемся мировыми кулинарными традициями.
+        Наши блюда сочетают в себе простоту и изысканность, чтобы подарить вам незабываемые вкусовые впечатления.
+      </p>
+    </div>
+
+    <!-- Интересные факты -->
+    <div class="border-2 border-gray-300 rounded-xl p-5 bg-white shadow-sm">
+      <h2 class="text-lg sm:text-xl font-semibold mb-3">Интересные факты о блюдах</h2>
+      <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm sm:text-base">
+        <li>История карбонары уходит корнями в итальянские горы Абруццо.</li>
+        <li>Овсяное печенье когда-то было любимым лакомством королевского двора Англии.</li>
+        <li>Киноа признана одной из самых питательных круп благодаря высокому содержанию белка.</li>
+      </ul>
+    </div>
+
+    <!-- Фотогалерея -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+      <div class="overflow-hidden rounded-2xl border-4 border-red-200 hover:border-red-400 transition">
+        <img src="images/1.png" alt="Паста Карбонара" class="w-full h-40 sm:h-48 object-cover" />
+      </div>
+      <div class="overflow-hidden rounded-2xl border-4 border-red-200 hover:border-red-400 transition">
+        <img src="images/2.png" alt="Суп-пюре" class="w-full h-40 sm:h-48 object-cover" />
+      </div>
+      <div class="overflow-hidden rounded-2xl border-4 border-red-200 hover:border-red-400 transition">
+        <img src="images/3.png" alt="Панкейки" class="w-full h-40 sm:h-48 object-cover" />
+      </div>
+      <div class="overflow-hidden rounded-2xl border-4 border-red-200 hover:border-red-400 transition">
+        <img src="images/4.png" alt="Цезарь с курицей" class="w-full h-40 sm:h-48 object-cover" />
+      </div>
+      <div class="overflow-hidden rounded-2xl border-4 border-red-200 hover:border-red-400 transition">
+        <img src="images/5.png" alt="Шоколадный мусс" class="w-full h-40 sm:h-48 object-cover" />
+      </div>
+      <div class="overflow-hidden rounded-2xl border-4 border-red-200 hover:border-red-400 transition">
+        <img src="images/6.jpg" alt="Ризотто с грибами" class="w-full h-40 sm:h-48 object-cover" />
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-center text-sm text-gray-600 py-4 mt-auto">
+    &copy; 2025 TastyDay. Все права защищены.
+  </footer>
+
+</body>
+</html>

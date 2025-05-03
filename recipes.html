@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TastyDay — Рецепты</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      font-family: 'Manrope', sans-serif;
+    }
+    .transition-max-height {
+      transition: max-height 0.3s ease-in-out;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-[#c62828] shadow-md">
+    <div class="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between text-white">
+      <!-- Logo -->
+      <div class="border-2 border-white rounded-lg px-4 py-1">
+        <span class="text-xl sm:text-2xl font-extrabold tracking-wide">TastyDay</span>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-6 font-bold text-sm sm:text-base">
+        <a href="index.html" class="hover:underline">ГЛАВНАЯ</a>
+        <a href="recipes.html" class="hover:underline">РЕЦЕПТЫ</a>
+        <a href="gallery.html" class="hover:underline">ГАЛЕРЕЯ</a>
+        <a href="about.html" class="hover:underline">О НАС</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="block md:hidden text-white focus:outline-none">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobile-menu" class="transition-max-height max-h-0 md:hidden bg-[#c62828] px-4 text-white font-bold">
+      <a href="index.html" class="block py-2 border-t border-white/20">ГЛАВНАЯ</a>
+      <a href="recipes.html" class="block py-2 border-t border-white/20">РЕЦЕПТЫ</a>
+      <a href="gallery.html" class="block py-2 border-t border-white/20">ГАЛЕРЕЯ</a>
+      <a href="about.html" class="block py-2 border-t border-white/20 border-b">О НАС</a>
+    </nav>
+  </header>
+
+  <!-- Script -->
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('max-h-0');
+      menu.classList.toggle('max-h-96');
+    });
+  </script>
+
+  <!-- Main -->
+  <main class="max-w-5xl mx-auto py-12 px-4 sm:px-6 space-y-12 flex-1">
+    <h1 class="text-3xl font-extrabold text-center mb-8">Рецепты</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Карточка рецепта -->
+      <div class="border border-gray-200 rounded-xl shadow-sm p-5 bg-white hover:shadow-md transition">
+        <h2 class="text-xl font-bold mb-2">Тыквенный суп-пюре</h2>
+        <p class="mb-1 text-sm">Ингредиенты: тыква, сливки, лук, морковь, специи.</p>
+        <p class="text-sm text-gray-600">Обжарьте овощи, добавьте воду и варите до мягкости, затем пюрируйте и добавьте сливки.</p>
+      </div>
+
+      <div class="border border-gray-200 rounded-xl shadow-sm p-5 bg-white hover:shadow-md transition">
+        <h2 class="text-xl font-bold mb-2">Домашние панкейки</h2>
+        <p class="mb-1 text-sm">Ингредиенты: мука, яйца, молоко, сахар, масло.</p>
+        <p class="text-sm text-gray-600">Замешайте тесто и обжарьте на сухой сковороде по 2–3 минуты.</p>
+      </div>
+
+      <div class="border border-gray-200 rounded-xl shadow-sm p-5 bg-white hover:shadow-md transition">
+        <h2 class="text-xl font-bold mb-2">Цезарь с курицей</h2>
+        <p class="mb-1 text-sm">Ингредиенты: куриное филе, салат Ромэн, сухарики, Пармезан, соус Цезарь.</p>
+        <p class="text-sm text-gray-600">Обжарьте курицу, нарежьте салат, добавьте сухарики, сыр и соус.</p>
+      </div>
+
+      <div class="border border-gray-200 rounded-xl shadow-sm p-5 bg-white hover:shadow-md transition">
+        <h2 class="text-xl font-bold mb-2">Овсяное печенье</h2>
+        <p class="mb-1 text-sm">Ингредиенты: овсяные хлопья, масло, сахар, яйца, мука, разрыхлитель.</p>
+        <p class="text-sm text-gray-600">Смешайте, сформируйте печенье и выпекайте при 180°C 15 минут.</p>
+      </div>
+
+      <div class="border border-gray-200 rounded-xl shadow-sm p-5 bg-white hover:shadow-md transition">
+        <h2 class="text-xl font-bold mb-2">Салат с киноа и авокадо</h2>
+        <p class="mb-1 text-sm">Ингредиенты: киноа, авокадо, огурец, помидоры, лимонный сок, оливковое масло.</p>
+        <p class="text-sm text-gray-600">Отварите киноа, нарежьте овощи, смешайте и заправьте.</p>
+      </div>
+
+      <div class="border border-gray-200 rounded-xl shadow-sm p-5 bg-white hover:shadow-md transition">
+        <h2 class="text-xl font-bold mb-2">Шоколадный мусс</h2>
+        <p class="mb-1 text-sm">Ингредиенты: тёмный шоколад, сливки, сахар, яйца.</p>
+        <p class="text-sm text-gray-600">Растопите шоколад, взбейте сливки и яйца с сахаром, остудите.</p>
+      </div>
+
+      <div class="border border-gray-200 rounded-xl shadow-sm p-5 bg-white hover:shadow-md transition">
+        <h2 class="text-xl font-bold mb-2">Брускетта с томатами</h2>
+        <p class="mb-1 text-sm">Ингредиенты: багет, помидоры, чеснок, базилик, оливковое масло.</p>
+        <p class="text-sm text-gray-600">Обжарьте хлеб, смажьте чесноком и выложите томаты.</p>
+      </div>
+
+      <div class="border border-gray-200 rounded-xl shadow-sm p-5 bg-white hover:shadow-md transition">
+        <h2 class="text-xl font-bold mb-2">Ризотто с грибами</h2>
+        <p class="mb-1 text-sm">Ингредиенты: рис Арборио, грибы, лук, бульон, Пармезан.</p>
+        <p class="text-sm text-gray-600">Обжарьте лук и грибы, добавьте рис, затем бульон, помешивая до кремообразности.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-center text-sm text-gray-600 py-4 mt-auto">
+    &copy; 2025 TastyDay. Все права защищены.
+  </footer>
+
+</body>
+</html>
